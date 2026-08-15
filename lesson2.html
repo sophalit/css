@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>មេរៀនទី២៖ CSS Syntax និងការបញ្ចូល CSS — Interactive Visual Learning</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/lesson1.css"> <!-- Reuse some generic components -->
+  <link rel="stylesheet" href="css/lesson2.css">
+</head>
+<body>
+
+  <div class="bg-aurora">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="app-shell">
+    
+    <header class="navbar" id="navbar">
+      <div class="brand">
+        <div class="brand-icon" style="background: #8b5cf6;">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="brand-text">
+          <h1>មេរៀនទី២៖ CSS Syntax និងការបញ្ចូល CSS</h1>
+          <span>Chapter 2 • Fundamentals</span>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="nav-btn theme-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="index.html" class="nav-btn back-btn">
+          <i class="fa-solid fa-arrow-left"></i> <span>បិទ (Close)</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="studio-layout">
+      <!-- ═══ SIDEBAR NAVIGATION ═══ -->
+      <aside class="studio-sidebar">
+        <div class="studio-nav">
+          <button class="studio-nav-btn active" data-tab="tab-syntax">
+            <i class="fa-solid fa-code"></i> CSS Syntax Anatomy
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-methods">
+            <i class="fa-solid fa-file-export"></i> បញ្ចូល CSS (Methods)
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-folder">
+            <i class="fa-solid fa-folder-tree"></i> រៀបចំ Folder & Linking
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-studio">
+            <i class="fa-solid fa-laptop-code"></i> Code Studio (Mini Challenge)
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-quiz">
+            <i class="fa-solid fa-list-check"></i> Knowledge Quiz
+          </button>
+        </div>
+      </aside>
+
+      <!-- ═══ MAIN CONTENT PANES ═══ -->
+      <main class="studio-main">
+        
+        <!-- ============================================== -->
+        <!-- TAB 1: CSS Syntax Anatomy                      -->
+        <!-- ============================================== -->
+        <section id="tab-syntax" class="studio-pane active">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-code" style="color: #8b5cf6;"></i> រចនាសម្ព័ន្ធ CSS Syntax</h2>
+            <p>ស្វែងយល់ពីតួនាទីរបស់ផ្នែកនីមួយៗក្នុងការសរសេរ CSS Rule។ សូមដាក់ Mouse ពីលើពាក្យនីមួយៗ។</p>
+          </div>
+
+          <div class="syntax-explorer-v2">
+            <div class="syntax-code">
+              <span class="syn-part syn-selector" data-target="info-selector" tabindex="0">h1</span>
+              <span class="syn-brace">{</span><br>
+              &nbsp;&nbsp;<span class="syn-part syn-property" data-target="info-property" tabindex="0">color</span><span class="syn-colon">:</span> 
+              <span class="syn-part syn-value" data-target="info-value" tabindex="0">blue</span><span class="syn-semi">;</span><br>
+              <span class="syn-brace">}</span>
+            </div>
+
+            <!-- Additional interactive wrappers for Declaration Block and Rule -->
+            <div class="syntax-areas">
+              <button class="syn-area-btn" data-target="info-declaration">
+                <i class="fa-solid fa-bolt"></i> Declaration
+              </button>
+              <button class="syn-area-btn" data-target="info-block">
+                <i class="fa-solid fa-cube"></i> Declaration Block
+              </button>
+              <button class="syn-area-btn" data-target="info-comment">
+                <i class="fa-solid fa-comment-dots"></i> CSS Comments
+              </button>
+            </div>
+
+            <!-- INFO PANELS -->
+            <div class="syntax-info-panels">
+              <div id="info-default" class="info-panel active">
+                <h3>សូមដាក់ Mouse លើកូដខាងលើ ឬចុចប៊ូតុងខាងក្រោម</h3>
+                <p>ដើម្បីស្វែងយល់លម្អិតអំពីតួនាទីរបស់វា។</p>
+              </div>
+              <div id="info-selector" class="info-panel">
+                <h3 style="color: #89b4fa;">Selector (តើរើសអ្វី?)</h3>
+                <p>ជាឈ្មោះ Element (ឧ. <code>h1</code>) ដែលប្រាប់ Browser ថា <strong>"រក HTML នេះហើយដាក់ពណ៌ឱ្យវា"</strong>។</p>
+              </div>
+              <div id="info-property" class="info-panel">
+                <h3 style="color: #cba6f7;">Property (តើចង់កែអ្វី?)</h3>
+                <p>ជាលក្ខណៈ (ឧ. <code>color</code>) ដែលប្រាប់ Browser ថាយើងចង់កែប្រែអ្វី (ពណ៌អក្សរ ទំហំ ឬផ្ទៃខាងក្រោយ)។</p>
+              </div>
+              <div id="info-value" class="info-panel">
+                <h3 style="color: #a6e3a1;">Value (តើចង់ដាក់តម្លៃអ្វី?)</h3>
+                <p>ជាតម្លៃ (ឧ. <code>blue</code>) ដែលបញ្ជាក់ច្បាស់លាស់ពីអ្វីដែលយើងចង់បាន (ឧ. ចង់បានពណ៌ខៀវ)។</p>
+              </div>
+              <div id="info-declaration" class="info-panel">
+                <h3 style="color: #f38ba8;">Declaration (សេចក្ដីប្រកាស)</h3>
+                <p><code>color: blue;</code> គឺជា Declaration មួយ។ វាជាគូរបស់ Property និង Value ដែលភ្ជាប់ដោយ <code>:</code> និងបញ្ចប់ដោយ <code>;</code>។</p>
+              </div>
+              <div id="info-block" class="info-panel">
+                <h3 style="color: #f9e2af;">Declaration Block</h3>
+                <p>គឺក្រុមនៃ Declarations ដែលស្ថិតនៅក្នុងវង់ក្រចក <code>{ }</code>។ វាអាចមានមួយ ឬច្រើន។</p>
+              </div>
+              <div id="info-comment" class="info-panel">
+                <h3 style="color: #bac2de;">CSS Comment <code>/* ... */</code></h3>
+                <p>អត្ថបទសរសេរសម្រាប់អ្នកសរសេរកូដអាន Browser មិនខ្វល់ពីវាទេ។ ជួយពន្យល់កូដកុំឱ្យភ្លេច!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 2: INLINE VS INTERNAL VS EXTERNAL          -->
+        <!-- ============================================== -->
+        <section id="tab-methods" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-file-export" style="color: #3b82f6;"></i> វិធីសាស្ត្របញ្ចូល CSS</h2>
+            <p>ពី Inline ដែលរញ៉េរញ៉ៃ ទៅ External ដែលមានរបៀបរៀបរយ។ សូមចុចប៊ូតុង "Refactor" ដើម្បីមើលកូដផ្លាស់ទី!</p>
+          </div>
+
+          <div class="refactor-tool">
+            <div class="refactor-steps">
+              <button class="step-btn active" data-step="inline">1. Inline CSS</button>
+              <i class="fa-solid fa-arrow-right step-arrow"></i>
+              <button class="step-btn" data-step="internal">2. Internal CSS</button>
+              <i class="fa-solid fa-arrow-right step-arrow"></i>
+              <button class="step-btn" data-step="external">3. External CSS</button>
+            </div>
+
+            <div class="refactor-editors">
+              <div class="editor-pane">
+                <div class="editor-tab"><i class="fa-brands fa-html5"></i> index.html</div>
+                <pre class="code-view" id="htmlCodeView">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  <span class="code-highlight">&lt;h1 <span id="inlineCode">style="color: red;"</span>&gt;CSS&lt;/h1&gt;</span>
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+              </div>
+              
+              <div class="editor-pane" id="cssEditorPane" style="opacity: 0.3; pointer-events: none;">
+                <div class="editor-tab"><i class="fa-brands fa-css3-alt"></i> style.css</div>
+                <pre class="code-view" id="cssCodeView">
+<span class="text-muted">/* មិនទាន់មាន File នេះនៅឡើយទេ */</span>
+                </pre>
+              </div>
+            </div>
+            
+            <div class="refactor-desc" id="refactorDesc">
+              <h3>Inline CSS</h3>
+              <p>សរសេរ CSS ផ្ទាល់ក្នុង HTML Tag តាមរយៈ <code>style="..."</code>។ សមស្របសម្រាប់កែធាតុមួយភ្លាមៗ ប៉ុន្តែបើមានច្រើនវានឹងធ្វើឱ្យកូដ HTML វែងនិងរញ៉េរញ៉ៃ។</p>
+            </div>
+            
+            <button id="btnAnimateRefactor" class="refactor-action-btn">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> បំលែងទៅ Internal CSS (Refactor)
+            </button>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 3: FOLDER STRUCTURE & LINKING              -->
+        <!-- ============================================== -->
+        <section id="tab-folder" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-folder-tree" style="color: #22c55e;"></i> រៀបចំ Folder និងការភ្ជាប់ (Linking)</h2>
+            <p>តើត្រូវសរសេរ <code>href="..."</code> យ៉ាងដូចម្តេចឱ្យត្រូវ? សាកល្បងតភ្ជាប់ File HTML ទៅកាន់ CSS!</p>
+          </div>
+
+          <div class="linking-tool">
+            <div class="folder-structure">
+              <h3>Project Folder</h3>
+              <ul class="file-tree">
+                <li><i class="fa-solid fa-folder-open text-blue"></i> <code>my-website/</code>
+                  <ul>
+                    <li class="active-file" id="fileIndex"><i class="fa-brands fa-html5 text-orange"></i> <code>index.html</code></li>
+                    <li><i class="fa-solid fa-folder text-blue"></i> <code>css/</code>
+                      <ul>
+                        <li class="target-file" id="fileStyle"><i class="fa-brands fa-css3-alt text-blue"></i> <code>style.css</code></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="link-tester">
+              <h3>តភ្ជាប់ <code>index.html</code> ទៅ <code>style.css</code></h3>
+              
+              <div class="code-tester-box">
+                <div class="code-line">
+                  <span class="t-tag">&lt;head&gt;</span>
+                </div>
+                <div class="code-line indented">
+                  <span class="t-tag">&lt;link</span> 
+                  <span class="t-attr">rel</span><span class="t-eq">=</span><span class="t-val">"stylesheet"</span> 
+                </div>
+                <div class="code-line indented input-line">
+                  <span class="t-attr">href</span><span class="t-eq">=</span><span class="t-val">"</span><input type="text" id="pathInput" placeholder="បញ្ជូល Path នៅទីនេះ..." autocomplete="off" spellcheck="false"><span class="t-val">"</span><span class="t-tag">&gt;</span>
+                </div>
+                <div class="code-line">
+                  <span class="t-tag">&lt;/head&gt;</span>
+                </div>
+              </div>
+
+              <div class="connection-status" id="connectionStatus">
+                <div class="conn-line"></div>
+                <div class="conn-icon"><i class="fa-solid fa-link-slash"></i></div>
+                <p>រង់ចាំការតភ្ជាប់...</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 4: CODE STUDIO (MINI CHALLENGE)            -->
+        <!-- ============================================== -->
+        <section id="tab-studio" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-laptop-code" style="color: #f59e0b;"></i> Mini Challenge: Student Profile</h2>
+            <p>ប្រើ External CSS ដើម្បីតុបតែង Profile Page នេះ។ (HTML ត្រូវបានភ្ជាប់ CSS រួចរាល់)</p>
+          </div>
+
+          <div class="studio-editor-wrapper">
+            <div class="editor-header-bar">
+              <div class="file-tabs">
+                <button class="file-tab-btn active" data-file="html"><i class="fa-brands fa-html5"></i> index.html</button>
+                <button class="file-tab-btn" data-file="css"><i class="fa-brands fa-css3-alt"></i> style.css</button>
+              </div>
+              <button id="runCodeBtn" class="vs-run-code-btn"><i class="fa-solid fa-play"></i> Run Code</button>
+            </div>
+            
+            <div class="editor-body-grid">
+              <div class="code-textarea-box">
+                <textarea id="codeEditor" class="studio-code-input" spellcheck="false"></textarea>
+              </div>
+              <div class="preview-box">
+                <div class="preview-header-bar"><i class="fa-solid fa-globe"></i> Live Browser View</div>
+                <iframe id="previewFrame" class="studio-iframe"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB 5: QUIZ                                    -->
+        <!-- ============================================== -->
+        <section id="tab-quiz" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-list-check" style="color: #ec4899;"></i> សាកល្បងចំណេះដឹង</h2>
+            <p>តើអ្នកយល់ពី CSS Syntax ដល់កម្រិតណា?</p>
+          </div>
+          <div class="quiz-area" id="quizArea">
+            <!-- Rendered by JS -->
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/lesson2.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+/* lesson2.css - Specific styles for the interactive CSS Lesson 2 module */
+
+/* ---------------------------------
+   TAB 1: SYNTAX ANATOMY (v2)
+--------------------------------- */
+.syntax-explorer-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.syntax-code {
+  font-family: 'Fira Code', monospace;
+  font-size: 2.5rem;
+  background: #1e1e2e;
+  padding: 2.5rem 4rem;
+  border-radius: 20px;
+  border: 1px solid #313244;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.syn-part, .syn-brace, .syn-colon, .syn-semi {
+  transition: all 0.2s;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.syn-part {
+  cursor: pointer;
+  position: relative;
+}
+
+/* Colors based on Catppuccin theme */
+.syn-selector { color: #89b4fa; }
+.syn-property { color: #cba6f7; }
+.syn-value { color: #a6e3a1; }
+.syn-brace, .syn-colon, .syn-semi { color: #94e2d5; }
+
+.syn-part:hover, .syn-part.active {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.syntax-areas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.syn-area-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: var(--text-main);
+  font-family: 'Kantumruy Pro', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.syn-area-btn:hover, .syn-area-btn.active {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+.syntax-info-panels {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.info-panel {
+  display: none;
+}
+.info-panel.active {
+  display: block;
+  animation: fadeIn 0.4s;
+}
+.info-panel h3 { margin-bottom: 0.8rem; font-size: 1.4rem; }
+.info-panel p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+.info-panel code {
+  background: rgba(255,255,255,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Specific Block Highlighting */
+.highlight-declaration {
+  background: rgba(243, 139, 168, 0.15) !important;
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px rgba(243, 139, 168, 0.1);
+}
+.highlight-block {
+  background: rgba(249, 226, 175, 0.1) !important;
+  border-radius: 16px;
+  box-shadow: 0 0 0 6px rgba(249, 226, 175, 0.05);
+}
+
+
+/* ---------------------------------
+   TAB 2: REFACTORING TOOL (Methods)
+--------------------------------- */
+.refactor-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.refactor-steps {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--bg-body);
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+.step-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.step-btn.active {
+  background: var(--accent-blue);
+  color: white;
+}
+.step-arrow { color: rgba(255,255,255,0.2); }
+
+.refactor-editors {
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+}
+.editor-pane {
+  flex: 1;
+  background: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  position: relative;
+}
+.editor-tab {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 15px;
+  border-bottom: 1px solid #313244;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.code-view {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #cdd6f4;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+/* Animations for Refactoring */
+.code-highlight {
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+#inlineCode {
+  color: #f38ba8; /* Redish for the inline style string */
+  transition: all 0.5s ease;
+}
+
+.refactor-desc {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 800px;
+}
+.refactor-desc h3 { color: var(--accent-blue); margin-bottom: 0.5rem; }
+.refactor-desc p { color: var(--text-muted); }
+
+.refactor-action-btn {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-family: 'Kantumruy Pro', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.refactor-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
+}
+
+
+/* ---------------------------------
+   TAB 3: FOLDER STRUCTURE & LINKING
+--------------------------------- */
+.linking-tool {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.folder-structure, .link-tester {
+  flex: 1;
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+}
+.folder-structure h3, .link-tester h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.file-tree {
+  list-style: none;
+  padding-left: 1rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  line-height: 2;
+}
+.file-tree ul {
+  list-style: none;
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  margin-left: 6px;
+}
+.file-tree li { position: relative; }
+.file-tree li::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -1.5rem;
+  width: 1rem;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+/* Exception for root */
+.file-tree > li::before { display: none; }
+
+.text-blue { color: #3b82f6; }
+.text-orange { color: #f97316; }
+
+.active-file {
+  background: rgba(249, 115, 22, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.target-file {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: 0.3s;
+}
+.target-file.success {
+  background: rgba(34, 197, 94, 0.2);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+.code-tester-box {
+  background: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.code-line { margin-bottom: 4px; }
+.code-line.indented { padding-left: 20px; }
+.input-line { display: flex; align-items: center; }
+.t-tag { color: #89b4fa; }
+.t-attr { color: #cba6f7; }
+.t-val { color: #a6e3a1; }
+.t-eq { color: #94e2d5; }
+
+#pathInput {
+  background: rgba(0,0,0,0.3);
+  border: 1px dashed rgba(255,255,255,0.3);
+  color: #a6e3a1;
+  padding: 4px 8px;
+  font-family: inherit;
+  font-size: inherit;
+  width: 220px;
+  outline: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+#pathInput:focus {
+  border-color: #89b4fa;
+  background: rgba(0,0,0,0.5);
+}
+#pathInput.success { border-color: #22c55e; border-style: solid; background: rgba(34, 197, 94, 0.1); }
+#pathInput.error { border-color: #ef4444; border-style: solid; background: rgba(239, 68, 68, 0.1); color: #f38ba8; }
+
+.connection-status {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px dashed rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+.connection-status.success {
+  background: rgba(34, 197, 94, 0.05);
+  border-color: #22c55e;
+  color: #4ade80;
+}
+.connection-status.error {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: #ef4444;
+  color: #f87171;
+}
+.conn-icon i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ជំពូកទី២៖ មូលដ្ឋានគ្រឹះនៃ CSS — Interactive Visual Learning</title>
+  <meta name="description" content="រៀន CSS ពីមូលដ្ឋានគ្រឹះដល់កម្រិតខ្ពស់ ២០ មេរៀន ២០០+ ប្រធានបទ ជាមួយ Interactive Visual Learning Studio">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-aurora">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="app-shell">
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <header class="navbar" id="navbar">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon">
+          <i class="fa-brands fa-css3-alt"></i>
+        </div>
+        <div class="brand-text">
+          <h1>CSS Fundamentals</h1>
+          <span>ជំពូកទី២ • មូលដ្ឋានគ្រឹះនៃ CSS</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="../index.html" class="nav-btn back-btn" aria-label="Back to Roadmap">
+          <i class="fa-solid fa-arrow-left"></i> <span>ត្រឡប់ Roadmap</span>
+        </a>
+        <button id="themeToggleBtn" class="nav-btn theme-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ═══════════════ HERO SECTION ═══════════════ -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-row">
+          <span class="badge badge-chapter"><i class="fa-solid fa-bookmark"></i> ជំពូកទី២</span>
+          <span class="badge badge-level"><i class="fa-solid fa-signal"></i> Beginner → Intermediate</span>
+          <span class="badge badge-hours"><i class="fa-solid fa-clock"></i> ~60 ម៉ោង</span>
+        </div>
+        <h2>មូលដ្ឋានគ្រឹះនៃ <span class="gradient-text">CSS</span></h2>
+        <p>រៀនសូត្រពី CSS Syntax, Selectors, Box Model, Flexbox, Grid, Animations រហូតដល់ Responsive Design និង Mini Project ពេញលេញ។</p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number" id="statLessons">20</div>
+            <div class="stat-label">មេរៀន (Lessons)</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number" id="statTopics">200+</div>
+            <div class="stat-label">ប្រធានបទ (Topics)</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number" id="statQuizzes">20</div>
+            <div class="stat-label">Quiz Questions</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Card -->
+      <div class="progress-card" id="progressCard">
+        <div class="progress-header">
+          <h3><i class="fa-solid fa-chart-pie"></i> វឌ្ឍនភាពសិក្សា</h3>
+          <span class="progress-pct" id="progressPct">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-detail">
+          <span>ប្រធានបទបានសិក្សា៖</span>
+          <span id="progressCount">0 / 0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SEARCH & FILTERS ═══════════════ -->
+    <section class="toolbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="ស្វែងរកមេរៀន (ឧ. Flexbox, Grid, Box Model, Animation)..." aria-label="Search lessons">
+      </div>
+      <div class="filter-group" id="filterGroup">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ═══════════════ MAIN CONTENT: LESSON CARDS ═══════════════ -->
+    <main class="lessons-grid" id="lessonsGrid">
+      <!-- Rendered dynamically -->
+    </main>
+
+    <!-- ═══════════════ LEARNING OUTCOMES ═══════════════ -->
+    <section class="outcomes-section" id="outcomesSection">
+      <div class="outcomes-header">
+        <h3><i class="fa-solid fa-graduation-cap"></i> លទ្ធផលសិក្សាចុងក្រោយ</h3>
+        <p>ក្រោយបញ្ចប់មាតិកា CSS នេះ និស្សិតគួរអាច៖</p>
+      </div>
+      <div class="outcomes-grid" id="outcomesGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+      <p>&copy; 2026 CSS Fundamentals — Interactive Visual Learning. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+    </footer>
+  </div>
+
+  <!-- ═══════════════ LESSON DETAIL MODAL ═══════════════ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <div class="modal-badges" id="modalBadges"></div>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc" class="text-muted"></p>
+        </div>
+        <button id="closeModalBtn" class="close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Launch Interactive Visual Studio Banner Button -->
+      <div class="vs-banner-box" style="margin-bottom: 1.5rem;">
+        <button id="launchStudioBtn" class="vs-launch-btn" style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(6, 182, 212, 0.15)); border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 12px; color: var(--accent-blue); font-family: 'Kantumruy Pro', sans-serif; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> 
+            <span>បើកផ្ទាំងរៀនតាមរូបភាពអន្តរកម្ម (Interactive Visual Studio)</span>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Modal Tabs -->
+      <nav class="modal-tabs" id="modalTabs">
+        <button class="tab-btn active" data-tab="tab-topics"><i class="fa-solid fa-list-check"></i> ប្រធានបទ</button>
+        <button class="tab-btn" data-tab="tab-objectives"><i class="fa-solid fa-bullseye"></i> គោលបំណង</button>
+        <button class="tab-btn" data-tab="tab-terms"><i class="fa-solid fa-key"></i> ពាក្យគន្លឹះ</button>
+        <button class="tab-btn" data-tab="tab-code"><i class="fa-solid fa-code"></i> Code Studio</button>
+        <button class="tab-btn" data-tab="tab-quiz"><i class="fa-solid fa-circle-question"></i> Quiz</button>
+      </nav>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <!-- Tab: Topics -->
+        <div class="tab-pane active" id="tab-topics">
+          <div class="topics-checklist" id="topicsChecklist"></div>
+        </div>
+
+        <!-- Tab: Objectives -->
+        <div class="tab-pane" id="tab-objectives">
+          <div class="objectives-list" id="objectivesList"></div>
+        </div>
+
+        <!-- Tab: Key Terms -->
+        <div class="tab-pane" id="tab-terms">
+          <div class="terms-grid" id="termsGrid"></div>
+        </div>
+
+        <!-- Tab: Code Studio -->
+        <div class="tab-pane" id="tab-code">
+          <div class="code-studio">
+            <div class="code-tabs">
+              <button class="code-tab-btn active" data-file="html"><i class="fa-brands fa-html5"></i> HTML</button>
+              <button class="code-tab-btn" data-file="css"><i class="fa-brands fa-css3-alt"></i> CSS</button>
+              <button class="code-tab-btn" data-file="js"><i class="fa-brands fa-js"></i> JS</button>
+              <button id="runCodeBtn" class="run-btn"><i class="fa-solid fa-play"></i> Run Code</button>
+            </div>
+            <div class="code-editor-area">
+              <textarea id="codeEditor" class="code-input" spellcheck="false"></textarea>
+            </div>
+            <div class="preview-area">
+              <div class="preview-bar"><i class="fa-solid fa-globe"></i> Live Preview</div>
+              <iframe id="previewFrame" class="preview-iframe" title="Code Preview"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Quiz -->
+        <div class="tab-pane" id="tab-quiz">
+          <div class="quiz-area" id="quizArea"></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer Nav -->
+      <div class="modal-footer">
+        <button id="prevLessonBtn" class="modal-nav-btn"><i class="fa-solid fa-chevron-left"></i> មេរៀនមុន</button>
+        <div class="lesson-indicator" id="lessonIndicator">មេរៀនទី 1 នៃ 20</div>
+        <button id="nextLessonBtn" class="modal-nav-btn primary">មេរៀនបន្ត <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/css-curriculum-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

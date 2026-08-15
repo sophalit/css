@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>មេរៀនទី៣៖ ការប្រើប្រាស់ CSS Selectors និង Cascading — Interactive Visual Learning</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/lesson3.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="lesson-header">
+    <div class="header-left">
+      <div class="lesson-icon" style="background-color: rgba(6, 182, 212, 0.2); color: #06b6d4;">
+        <i class="fa-solid fa-bullseye"></i>
+      </div>
+      <div>
+        <h1>មេរៀនទី៣៖ CSS Selectors និង Cascading</h1>
+        <p>Chapter 2 • Fundamentals</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+        <i class="fa-solid fa-arrow-left"></i> បិទ (Close)
+      </button>
+    </div>
+  </header>
+
+  <div class="lesson-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="lesson-sidebar">
+      <nav class="sidebar-nav">
+        <button class="tab-btn active" data-tab="tab-target-practice">
+          <i class="fa-solid fa-crosshairs"></i> Interactive Selector Visualizer
+        </button>
+        <button class="tab-btn" data-tab="tab-code-studio">
+          <i class="fa-solid fa-laptop-code"></i> Code Studio (Mini Challenge)
+        </button>
+        <button class="tab-btn" data-tab="tab-quiz">
+          <i class="fa-solid fa-list-check"></i> Knowledge Quiz
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="lesson-content">
+      
+      <!-- TAB 1: Target Practice (Selector Visualizer) -->
+      <section id="tab-target-practice" class="tab-pane active">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-crosshairs"></i> Target Practice: CSS Selectors</h2>
+          <p>ចុចលើ Selector នៅខាងឆ្វេង ដើម្បីមើលថាវានឹងជ្រើសរើស Element មួយណានៅក្នុងឯកសារ HTML ខាងស្តាំ។</p>
+        </div>
+        
+        <div class="target-practice-container">
+          <!-- Left: Selectors List -->
+          <div class="selectors-list">
+            <h3>ជ្រើសរើស Selector</h3>
+            
+            <div class="selector-category">មូលដ្ឋាន (Basic)</div>
+            <button class="selector-btn" data-target-type="element"><code>p</code> <span class="desc">Element Selector</span></button>
+            <button class="selector-btn" data-target-type="class"><code>.card</code> <span class="desc">Class Selector</span></button>
+            <button class="selector-btn" data-target-type="id"><code>#header</code> <span class="desc">ID Selector</span></button>
+            <button class="selector-btn" data-target-type="universal"><code>*</code> <span class="desc">Universal Selector</span></button>
+            
+            <div class="selector-category">បន្សំ (Combinators & Grouping)</div>
+            <button class="selector-btn" data-target-type="grouping"><code>h2, p</code> <span class="desc">Grouping Selector</span></button>
+            <button class="selector-btn" data-target-type="descendant"><code>.card p</code> <span class="desc">Descendant Selector</span></button>
+            <button class="selector-btn" data-target-type="child"><code>.card > p</code> <span class="desc">Child Selector</span></button>
+            
+            <div class="selector-category">លក្ខណៈ (Attribute)</div>
+            <button class="selector-btn" data-target-type="attribute"><code>input[type="text"]</code> <span class="desc">Attribute Selector</span></button>
+            <button class="selector-btn" data-target-type="combined"><code>.card .btn</code> <span class="desc">Combined Selector</span></button>
+          </div>
+
+          <!-- Right: DOM Visualizer -->
+          <div class="dom-visualizer">
+            <h3>Visual DOM (HTML Structure)</h3>
+            <div class="dom-wrapper" id="domWrapper">
+              
+              <div class="dom-node tag-body" data-node="body">
+                <div class="node-label"><code>&lt;body&gt;</code></div>
+                
+                <div class="dom-node tag-header" data-node="header" id="dom-header">
+                  <div class="node-label"><code>&lt;header id="header"&gt;</code></div>
+                  <div class="dom-node tag-h1" data-node="h1">
+                    <div class="node-label"><code>&lt;h1&gt;</code> Web Programming <code>&lt;/h1&gt;</code></div>
+                  </div>
+                </div>
+
+                <div class="dom-node tag-main" data-node="main">
+                  <div class="node-label"><code>&lt;main&gt;</code></div>
+                  
+                  <div class="dom-node tag-h2" data-node="h2">
+                    <div class="node-label"><code>&lt;h2&gt;</code> Student Profiles <code>&lt;/h2&gt;</code></div>
+                  </div>
+
+                  <div class="dom-node tag-div class-card" data-node="card">
+                    <div class="node-label"><code>&lt;div class="card"&gt;</code></div>
+                    
+                    <div class="dom-node tag-p" data-node="p">
+                      <div class="node-label"><code>&lt;p&gt;</code> Sok Dara (Information Technology) <code>&lt;/p&gt;</code></div>
+                    </div>
+
+                    <div class="dom-node tag-section" data-node="section">
+                      <div class="node-label"><code>&lt;section&gt;</code></div>
+                      <div class="dom-node tag-p" data-node="p-descendant">
+                        <div class="node-label"><code>&lt;p&gt;</code> Nested Paragraph <code>&lt;/p&gt;</code></div>
+                      </div>
+                    </div>
+
+                    <div class="dom-node tag-input" data-node="input-text">
+                      <div class="node-label"><code>&lt;input type="text"&gt;</code></div>
+                    </div>
+                    
+                    <div class="dom-node tag-input" data-node="input-email">
+                      <div class="node-label"><code>&lt;input type="email"&gt;</code></div>
+                    </div>
+
+                    <div class="dom-node tag-button class-btn" data-node="btn">
+                      <div class="node-label"><code>&lt;button class="btn"&gt;</code> View Profile <code>&lt;/button&gt;</code></div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="explanation-panel" id="explanationPanel">
+              <div class="explanation-title" id="expTitle">ជ្រើសរើស Selector...</div>
+              <div class="explanation-desc" id="expDesc">សូមជ្រើសរើស Selector នៅខាងឆ្វេង ដើម្បីមើលការពន្យល់ និងសកម្មភាពរបស់វានៅលើ HTML Elements។</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: Code Studio -->
+      <section id="tab-code-studio" class="tab-pane">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-laptop-code"></i> Code Studio: Course Cards Challenge</h2>
+          <p>ប្រើប្រាស់ Selectors ដែលបានរៀន ដើម្បីរចនា Course Card ខាងក្រោមឱ្យបានស្អាត។</p>
+        </div>
+        
+        <div class="code-studio-layout">
+          <!-- Editor Column -->
+          <div class="editor-col">
+            <div class="editor-tabs">
+              <button class="editor-tab active" data-file="html">HTML</button>
+              <button class="editor-tab" data-file="css">CSS</button>
+            </div>
+            
+            <div class="editor-content-wrapper">
+              <!-- HTML Editor (Read Only for this challenge) -->
+              <textarea id="htmlEditor" class="code-editor active" readonly>
+<section id="courses">
+  <div class="course-card">
+    <h2 class="course-title">CSS Selectors</h2>
+    <p>Learn how to target elements.</p>
+    <input type="text" placeholder="Note...">
+    <button class="btn">Learn More</button>
+  </div>
+</section>
+              </textarea>
+              
+              <!-- CSS Editor -->
+              <textarea id="cssEditor" class="code-editor" placeholder="សរសេរ CSS នៅទីនេះ...
+ឧទាហរណ៍៖
+#courses { padding: 20px; }
+.course-card { background: white; border-radius: 8px; }
+.course-title { color: navy; }
+input[type='text'] { border: 1px solid #ccc; }
+">
+/* សរសេរ CSS Selectors របស់អ្នកនៅទីនេះ */
+
+#courses {
+  padding: 20px;
+  background-color: #f1f5f9;
+}
+
+.course-card {
+  /* សាកល្បងដាក់ background, border, padding */
+  
+}
+
+.course-title {
+  /* សាកល្បងដូរពណ៌ និង font */
+  
+}
+
+/* ជ្រើសរើស button នៅក្នុង .course-card */
+.course-card .btn {
+  /* ពណ៌ប៊ូតុង */
+  
+}
+</textarea>
+            </div>
+            
+            <div class="editor-actions">
+              <button id="runCodeBtn" class="btn btn-primary">
+                <i class="fa-solid fa-play"></i> Run Code
+              </button>
+            </div>
+          </div>
+          
+          <!-- Output Column -->
+          <div class="output-col">
+            <div class="output-header">Live Output</div>
+            <iframe id="liveOutput" class="live-iframe"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: Quiz -->
+      <section id="tab-quiz" class="tab-pane">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-list-check"></i> Knowledge Quiz</h2>
+          <p>សាកល្បងចំណេះដឹងរបស់អ្នកអំពី CSS Selectors។</p>
+        </div>
+        
+        <div class="quiz-container" id="quizContainer">
+          <!-- Quiz will be generated by JS -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/css-curriculum-data.js"></script>
+  <script src="js/lesson3.js"></script>
+</body>
+</html>

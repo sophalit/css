@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>មេរៀនទី១៖ សេចក្ដីផ្ដើមនៃ CSS — Interactive Visual Learning</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/lesson1.css">
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-aurora">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="app-shell" style="max-width: 1600px;">
+    <!-- Studio Header -->
+    <header class="navbar" id="navbar">
+      <div class="brand">
+        <div class="brand-icon" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">
+          <i class="fa-solid fa-paintbrush"></i>
+        </div>
+        <div class="brand-text">
+          <h1>មេរៀនទី១៖ សេចក្ដីផ្ដើមនៃ CSS</h1>
+          <span>មូលដ្ឋានគ្រឹះនៃ CSS (Introduction to CSS)</span>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="index.html" class="nav-btn back-btn" aria-label="Back to Chapter">
+          <i class="fa-solid fa-arrow-left"></i> <span>ត្រឡប់ទៅមេរៀនសរុប</span>
+        </a>
+        <button id="themeToggleBtn" class="nav-btn theme-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Studio Layout -->
+    <div class="studio-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="studio-sidebar">
+        <nav class="studio-nav" id="studioNav">
+          <button class="studio-nav-btn active" data-tab="tab-overview">
+            <i class="fa-solid fa-bullseye"></i> គោលបំណង & ពាក្យគន្លឹះ
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-house">
+            <i class="fa-solid fa-house-chimney"></i> HTML vs CSS (ផ្ទះ)
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-syntax">
+            <i class="fa-solid fa-code"></i> CSS Syntax Breakdown
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-ui">
+            <i class="fa-solid fa-layer-group"></i> តួនាទី CSS លើ UI
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-browser">
+            <i class="fa-solid fa-gears"></i> របៀបដែល Browser អាន CSS
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-version">
+            <i class="fa-solid fa-timeline"></i> CSS2 vs CSS3
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-sandbox">
+            <i class="fa-solid fa-laptop-code"></i> Mini Challenge (Profile)
+          </button>
+          <button class="studio-nav-btn" data-tab="tab-quiz">
+            <i class="fa-solid fa-circle-question"></i> តេស្តស្ទង់ចំណេះដឹង
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="studio-main">
+        <!-- ══════════════ TAB 1: OVERVIEW ══════════════ -->
+        <section id="tab-overview" class="studio-pane active">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-bullseye text-accent"></i> គោលបំណងនៃមេរៀន</h2>
+            <p>បន្ទាប់ពីបញ្ចប់មេរៀននេះ និស្សិតអាច៖</p>
+          </div>
+          <div class="objectives-grid">
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> ពន្យល់និយមន័យរបស់ CSS បាន។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> ពន្យល់ពាក្យ Cascading Style Sheets បាន។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> បែងចែកតួនាទីរបស់ HTML និង CSS បាន។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> ពន្យល់តួនាទីរបស់ CSS ក្នុងការរចនាគេហទំព័រ។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> ស្គាល់គោលគំនិត Selector, Property និង Value។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> ពន្យល់ពីអត្ថប្រយោជន៍នៃការប្រើ CSS។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> យល់ពីរបៀបដែល CSS ជួយបង្កើត User Interface។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> ស្គាល់ភាពខុសគ្នាជាមូលដ្ឋានរវាង CSS2 និង CSS3។</div>
+            <div class="objective-card"><i class="fa-solid fa-check text-success"></i> ពន្យល់ជំហានមូលដ្ឋានដែល Browser ប្រើដើម្បីអាន HTML និង CSS។</div>
+          </div>
+
+          <div class="pane-header mt-8">
+            <h2><i class="fa-solid fa-key text-accent"></i> ពាក្យគន្លឹះសំខាន់ៗ</h2>
+          </div>
+          <div class="terms-grid">
+            <div class="term-box"><strong>CSS</strong><p>Cascading Style Sheets</p></div>
+            <div class="term-box"><strong>Style</strong><p>រចនាបថ</p></div>
+            <div class="term-box"><strong>Selector</strong><p>ធាតុដែលត្រូវរចនា</p></div>
+            <div class="term-box"><strong>Property</strong><p>លក្ខណៈដែលត្រូវកំណត់</p></div>
+            <div class="term-box"><strong>Value</strong><p>តម្លៃរបស់ Property</p></div>
+            <div class="term-box"><strong>HTML</strong><p>រចនាសម្ព័ន្ធ Web Page</p></div>
+            <div class="term-box"><strong>Layout</strong><p>ការរៀបចំទីតាំង Elements</p></div>
+            <div class="term-box"><strong>UI</strong><p>User Interface</p></div>
+            <div class="term-box"><strong>Render</strong><p>ដំណើរការបង្ហាញ Web Page</p></div>
+          </div>
+        </section>
+
+        <!-- ══════════════ TAB 2: HOUSE ANALOGY ══════════════ -->
+        <section id="tab-house" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-house-chimney text-accent"></i> ទំនាក់ទំនងរវាង HTML និង CSS</h2>
+            <p>គិតថាយើងកំពុងសាងសង់ផ្ទះមួយ៖ HTML ជាគ្រោងផ្ទះ, រីឯ CSS ជាការតុបតែងផ្ទះ។</p>
+          </div>
+          
+          <div class="analogy-container">
+            <div class="analogy-controls">
+              <label class="toggle-switch">
+                <input type="checkbox" id="cssToggleBtn">
+                <span class="slider"></span>
+                <span class="toggle-label">បើក CSS (Add Styling)</span>
+              </label>
+            </div>
+            
+            <div class="house-visualizer">
+              <div class="house-wrapper" id="houseElement">
+                <!-- Roof -->
+                <div class="house-roof">
+                  <div class="tag">&lt;header&gt;</div>
+                </div>
+                <!-- Body -->
+                <div class="house-body">
+                  <div class="tag">&lt;main&gt;</div>
+                  <!-- Windows -->
+                  <div class="house-window left-window">
+                    <div class="tag">&lt;div class="window"&gt;</div>
+                  </div>
+                  <div class="house-window right-window">
+                    <div class="tag">&lt;div class="window"&gt;</div>
+                  </div>
+                  <!-- Door -->
+                  <div class="house-door">
+                    <div class="tag">&lt;button class="door"&gt;</div>
+                    <div class="door-knob"></div>
+                  </div>
+                </div>
+                <!-- Foundation -->
+                <div class="house-foundation">
+                  <div class="tag">&lt;footer&gt;</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="analogy-explanation" id="analogyText">
+              <div class="state-html-only active">
+                <h3>HTML តែមួយមុខ (Structure Only)</h3>
+                <p>HTML បង្កើត <strong>រចនាសម្ព័ន្ធ</strong>។ វាប្រាប់ថាផ្ទះមាន បន្ទប់ ទ្វារ បង្អួច និងដំបូល ប៉ុន្តែមិនទាន់មានពណ៌ ឬភាពស្រស់ស្អាតឡើយ។</p>
+                <code>&lt;button&gt;Door&lt;/button&gt;</code>
+              </div>
+              <div class="state-css-added">
+                <h3>HTML + CSS (Structure & Presentation)</h3>
+                <p>CSS បង្កើត <strong>រូបរាង</strong>។ វាជួយលាបពណ៌ រៀបចំទីតាំង កំណត់ទំហំ តុបតែងជ្រុង និងធ្វើឲ្យផ្ទះមើលទៅស្រស់ស្អាត។</p>
+                <code>.door { background-color: brown; border-radius: 10px; }</code>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ TAB 3: CSS SYNTAX ══════════════ -->
+        <section id="tab-syntax" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-code text-accent"></i> CSS Syntax Breakdown</h2>
+            <p>CSS Rule ជាទូទៅមានទម្រង់៖ <code>selector { property: value; }</code></p>
+          </div>
+
+          <div class="syntax-explorer">
+            <div class="syntax-code">
+              <span class="syn-part syn-selector" data-target="info-selector">h1</span> <span class="syn-brace">{</span>
+              <div style="padding-left: 40px;">
+                <span class="syn-part syn-property" data-target="info-property">color</span><span class="syn-colon">:</span> <span class="syn-part syn-value" data-target="info-value">blue</span><span class="syn-semi">;</span><br>
+                <span class="syn-part syn-property" data-target="info-property-2">font-size</span><span class="syn-colon">:</span> <span class="syn-part syn-value" data-target="info-value-2">40px</span><span class="syn-semi">;</span>
+              </div>
+              <span class="syn-brace">}</span>
+            </div>
+
+            <div class="syntax-info-panels">
+              <div class="info-panel active" id="info-default">
+                <i class="fa-solid fa-hand-pointer text-muted" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p>យក Mouse ដាក់លើផ្នែកនីមួយៗនៃកូដ (Hover) ដើម្បីមើលការពន្យល់លម្អិត។</p>
+              </div>
+              <div class="info-panel" id="info-selector">
+                <h3 style="color: #3b82f6;">Selector (តើរចនាអ្វី?)</h3>
+                <p><code>h1</code> គឺជា Selector។ វាប្រាប់ Browser ថាត្រូវយក HTML Element ណាខ្លះមករចនា។ ក្នុងករណីនេះគឺ Heading 1 (h1) ទាំងអស់។</p>
+              </div>
+              <div class="info-panel" id="info-property">
+                <h3 style="color: #8b5cf6;">Property (រចនាផ្នែកណា?)</h3>
+                <p><code>color</code> គឺជា Property។ វាគឺជាលក្ខណៈដែលយើងចង់ផ្លាស់ប្តូរ (ឧ. ពណ៌អក្សរ)។</p>
+              </div>
+              <div class="info-panel" id="info-value">
+                <h3 style="color: #10b981;">Value (ដាក់តម្លៃអ្វី?)</h3>
+                <p><code>blue</code> គឺជា Value។ វាជាតម្លៃដែលផ្តល់ឱ្យ Property នោះ។ ដូច្នេះអក្សរនឹងមានពណ៌ខៀវ។</p>
+              </div>
+              <div class="info-panel" id="info-property-2">
+                <h3 style="color: #8b5cf6;">Property</h3>
+                <p><code>font-size</code> កំណត់ទំហំអក្សរ។</p>
+              </div>
+              <div class="info-panel" id="info-value-2">
+                <h3 style="color: #10b981;">Value</h3>
+                <p><code>40px</code> កំណត់ឲ្យទំហំអក្សរធំដល់ 40 pixels។</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cascading-explanation mt-8">
+            <h3 class="mb-4">តើពាក្យ Cascading មានន័យដូចម្តេច?</h3>
+            <p class="text-muted">ពាក្យ Cascading សំដៅទៅលើរបៀបដែល Style Rules ច្រើនអាចត្រូវបានប្រើលើ Element មួយ ហើយ Browser ត្រូវសម្រេចថា Style ណាត្រូវយកមកប្រើ។</p>
+          </div>
+        </section>
+
+        <!-- ══════════════ TAB 4: CSS IN UI ══════════════ -->
+        <section id="tab-ui" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-layer-group text-accent"></i> តួនាទីរបស់ CSS ក្នុងការរចនា User Interface (UI)</h2>
+            <p>ចុចបើក Properties នីមួយៗដើម្បីមើលពីរបៀបដែល CSS ប្រែក្លាយ HTML ធម្មតាទៅជា UI ដ៏ស្រស់ស្អាត។</p>
+          </div>
+
+          <div class="ui-playground">
+            <div class="ui-controls">
+              <h3><i class="fa-solid fa-sliders text-accent"></i> CSS Properties</h3>
+              
+              <label class="prop-checkbox">
+                <input type="checkbox" data-prop="color">
+                <div class="chk-box"></div>
+                <div class="prop-label">
+                  <strong>Color & Background</strong>
+                  <span>color, background-color</span>
+                </div>
+              </label>
+              
+              <label class="prop-checkbox">
+                <input type="checkbox" data-prop="typography">
+                <div class="chk-box"></div>
+                <div class="prop-label">
+                  <strong>Typography</strong>
+                  <span>font-family, font-size, text-align</span>
+                </div>
+              </label>
+
+              <label class="prop-checkbox">
+                <input type="checkbox" data-prop="spacing">
+                <div class="chk-box"></div>
+                <div class="prop-label">
+                  <strong>Spacing (Box Model)</strong>
+                  <span>padding, margin</span>
+                </div>
+              </label>
+
+              <label class="prop-checkbox">
+                <input type="checkbox" data-prop="borders">
+                <div class="chk-box"></div>
+                <div class="prop-label">
+                  <strong>Borders & Shadow</strong>
+                  <span>border-radius, box-shadow</span>
+                </div>
+              </label>
+
+              <label class="prop-checkbox">
+                <input type="checkbox" data-prop="layout">
+                <div class="chk-box"></div>
+                <div class="prop-label">
+                  <strong>Layout (Flexbox)</strong>
+                  <span>display: flex, justify-content</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="ui-preview-area">
+              <div class="ui-mockup" id="uiMockup">
+                <div class="ui-card">
+                  <div class="ui-card-header">
+                    <h2>Web Programming</h2>
+                  </div>
+                  <div class="ui-card-body">
+                    <p>Learn HTML and CSS</p>
+                    <button class="ui-btn">Start Learning</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ TAB 5: BROWSER PIPELINE ══════════════ -->
+        <section id="tab-browser" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-gears text-accent"></i> របៀបដែល Browser អាន HTML និង CSS</h2>
+            <p>សូមចុច Step បន្តបន្ទាប់ដើម្បីមើលដំណើរការ Rendering របស់ Browser។</p>
+          </div>
+
+          <div class="pipeline-container">
+            <div class="pipeline-steps">
+              <button class="pipe-btn active" data-step="1">1. អាន HTML</button>
+              <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              <button class="pipe-btn" data-step="2">2. អាន CSS</button>
+              <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              <button class="pipe-btn" data-step="3">3. ផ្គូផ្គង Selector</button>
+              <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              <button class="pipe-btn" data-step="4">4. Render (បង្ហាញ)</button>
+            </div>
+
+            <div class="pipeline-visualization">
+              <!-- Step 1 -->
+              <div class="pipe-viz active" id="pipe-1">
+                <div class="pipe-code">
+                  <code>&lt;h1&gt;Welcome&lt;/h1&gt;<br>&lt;p&gt;Learn CSS.&lt;/p&gt;</code>
+                </div>
+                <div class="pipe-desc">
+                  <h3>ជំហានទី១៖ Browser អាន HTML</h3>
+                  <p>Browser រកឃើញ <code>&lt;h1&gt;</code> និង <code>&lt;p&gt;</code> រួចបង្កើតជា Document Object Model (DOM) Tree។</p>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="pipe-viz" id="pipe-2">
+                <div class="pipe-code">
+                  <code>h1 { color: blue; }<br>p { font-size: 18px; }</code>
+                </div>
+                <div class="pipe-desc">
+                  <h3>ជំហានទី២៖ Browser អាន CSS</h3>
+                  <p>Browser ទាញយកនិងអាន CSS Rules រួចបង្កើតជា CSS Object Model (CSSOM) Tree។</p>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="pipe-viz" id="pipe-3">
+                <div class="pipe-match-grid">
+                  <div class="match-item"><code>h1</code> <i class="fa-solid fa-arrow-right text-accent"></i> <code>&lt;h1&gt;</code></div>
+                  <div class="match-item"><code>p</code> <i class="fa-solid fa-arrow-right text-accent"></i> <code>&lt;p&gt;</code></div>
+                </div>
+                <div class="pipe-desc">
+                  <h3>ជំហានទី៣៖ Browser ស្វែងរក Selector (ផ្គូផ្គង)</h3>
+                  <p>Browser ស្វែងរក Elements ក្នុង HTML ដែលត្រូវនឹង CSS Selector (ឧ. រកគ្រប់ <code>h1</code> ដើម្បីដាក់ពណ៌ខៀវ)។ វាបញ្ចូល DOM និង CSSOM ចូលគ្នាទៅជា Render Tree។</p>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="pipe-viz" id="pipe-4">
+                <div class="pipe-render-result">
+                  <h1 style="color: blue; margin:0;">Welcome</h1>
+                  <p style="font-size: 18px; margin:0;">Learn CSS.</p>
+                </div>
+                <div class="pipe-desc">
+                  <h3>ជំហានទី៤៖ Browser បង្ហាញលទ្ធផល (Render)</h3>
+                  <p>Property ត្រូវបានអនុវត្ត ហើយ Browser គូរ (Paint) Web Page ទៅលើ Screen ដើម្បីឲ្យអ្នកប្រើប្រាស់មើលឃើញ។</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ TAB 6: CSS2 VS CSS3 ══════════════ -->
+        <section id="tab-version" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-timeline text-accent"></i> CSS2 និង CSS3</h2>
+            <p>CSS ត្រូវបានអភិវឌ្ឍជាបន្តបន្ទាប់។ CSS3 បានបន្ថែមសមត្ថភាពក្នុងការរចនាដែលកាន់តែទំនើបដូចជា Animations និង Effects។</p>
+          </div>
+
+          <div class="version-comparison">
+            <div class="version-card">
+              <div class="v-header">CSS2 (Styling មូលដ្ឋាន)</div>
+              <div class="v-body">
+                <div class="v-box css2-box">Box Model</div>
+                <ul class="v-features">
+                  <li><i class="fa-solid fa-check"></i> Font, Color, Background</li>
+                  <li><i class="fa-solid fa-check"></i> Margin, Padding, Border</li>
+                  <li><i class="fa-solid fa-check"></i> Width, Height, Position</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="version-card highlight">
+              <div class="v-header bg-gradient">CSS3 (Styling ទំនើបជាងមុន)</div>
+              <div class="v-body">
+                <div class="v-box css3-box">Visual Effects</div>
+                <ul class="v-features">
+                  <li><i class="fa-solid fa-check text-accent"></i> Rounded Corners (border-radius)</li>
+                  <li><i class="fa-solid fa-check text-accent"></i> Shadows (box-shadow)</li>
+                  <li><i class="fa-solid fa-check text-accent"></i> Transitions & Animations</li>
+                  <li><i class="fa-solid fa-check text-accent"></i> Transform (Rotate, Scale)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ TAB 7: SANDBOX (Mini Challenge) ══════════════ -->
+        <section id="tab-sandbox" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-laptop-code text-accent"></i> Mini Challenge: Student Profile Card</h2>
+            <p>សាកល្បងប្រើ CSS ដើម្បីរចនា Profile Card ខាងក្រោមឲ្យបានស្រស់ស្អាតដោយកំណត់ Background, Text Color, Padding និង Border។</p>
+          </div>
+
+          <div class="studio-editor-wrapper">
+            <div class="editor-header-bar">
+              <div class="file-tabs">
+                <button class="file-tab-btn active" data-file="html"><i class="fa-brand fa-html5 text-orange"></i> index.html</button>
+                <button class="file-tab-btn" data-file="css"><i class="fa-brand fa-css3-alt text-blue"></i> style.css</button>
+              </div>
+              <button id="runCodeBtn" class="vs-run-code-btn">
+                <i class="fa-solid fa-play"></i> Run Live Code
+              </button>
+            </div>
+
+            <div class="editor-body-grid">
+              <div class="code-textarea-box">
+                <textarea id="codeEditor" class="studio-code-input" spellcheck="false"></textarea>
+              </div>
+              <div class="preview-box">
+                <div class="preview-header-bar"><i class="fa-solid fa-globe"></i> Live Preview Output</div>
+                <iframe id="previewFrame" class="studio-iframe"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ TAB 8: QUIZ ══════════════ -->
+        <section id="tab-quiz" class="studio-pane">
+          <div class="pane-header">
+            <h2><i class="fa-solid fa-circle-question text-accent"></i> តេស្តស្ទង់ចំណេះដឹង</h2>
+            <p>ផ្ទៀងផ្ទាត់ការយល់ដឹងរបស់អ្នកលើមេរៀនសេចក្ដីផ្ដើមនៃ CSS។</p>
+          </div>
+
+          <div class="quiz-area" id="quizArea">
+            <!-- Rendered by JS -->
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/lesson1.js"></script>
+</body>
+</html>
